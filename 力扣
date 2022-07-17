@@ -1,0 +1,31 @@
+`//二分查找//
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include<math.h>
+int search(int* nums, int numsSize, int target)
+{
+    int l=0,r=numsSize-1;
+    while(l<=r)
+    {
+        int mid=l+(r-l)/2;//防止数据溢出//
+        int num=nums[mid];
+        if(num==target) return mid;
+        else if(num>target) r=mid-1;
+        else l=mid+1;
+    }return -1;
+
+}
+
+int q[9999];
+int main()
+{
+    int n,m,i,x;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&q[i]);
+    } scanf("%d",&x);
+    printf("%d",search(q,n,x));//函数带入部分//!!!!!
+}
